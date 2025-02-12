@@ -1,0 +1,39 @@
+<h2>Leads</h2>
+
+<div class="card">
+  <p-table
+    [value]="leads"
+    [paginator]="true"
+    [rows]="14"
+    [tableStyle]="{ 'min-width': '50rem' }"
+  >
+      <ng-template #header>
+          <tr>
+              <th>Id</th>
+              <th>Fecha registro
+                <p-columnFilter type="text" field="date_created" display="menu" />
+              </th>
+              <th>Nombre(s)
+                <p-columnFilter type="text" field="name" display="menu" />
+              </th>
+              <th>Teléfono
+                <p-columnFilter type="text" field="phone" display="menu" />
+              </th>
+              <th>Asesor</th>
+              <th>Estado</th>
+              <th>Comentario</th>
+          </tr>
+      </ng-template>
+      <ng-template #body let-lead>
+          <tr>
+              <td>{{ lead.id }}</td>
+              <td>{{ lead.date_created }}</td>
+              <td>{{ lead.name }}</td>
+              <td>{{ lead.phone }}</td>
+              <td>{{ lead.adviser }}</td>
+              <td>{{ lead.status }}</td>
+              <td>{{ lead.comment }}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+</div>
