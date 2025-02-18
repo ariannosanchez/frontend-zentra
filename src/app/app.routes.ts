@@ -3,6 +3,10 @@ import { AppLayout } from './shared/ui/layout/component/app.layout';
 
 export const routes: Routes = [
   {
+    path: 'auth',
+    loadChildren: () => import('./auth/features/auth.routes'),
+  },
+  {
     path: '',
     component: AppLayout,
     children: [
